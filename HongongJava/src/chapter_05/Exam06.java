@@ -20,37 +20,37 @@ public class Exam06 {
 			
 			int selectNo = Integer.parseInt(sc.nextLine());
 			
-			if(selectNo == 1) {				// 학생 수 입력
+			if(selectNo == 1) {				// 1. 학생 수 입력
 				System.out.print("학생 수 > ");
-				studentNum = Integer.parseInt(sc.nextLine());;
-				scores = new int[studentNum];
+				studentNum = sc.nextInt();		// 학생 수를 입력받음
+				scores = new int[studentNum];	// 받은 학생 수로 점수 배열 생성
 			}
-			else if(selectNo == 2) {		// 점수 입력
+			else if(selectNo == 2) {		// 2. 점수 입력
 				for(int i = 0; i < studentNum; i++) {
-					System.out.print("scores[ " + i + "] > " );
-					scores[i] = Integer.parseInt(sc.nextLine());;
+					System.out.print("scores[ " + i + "] > " );	
+					scores[i] = sc.nextInt();	// 학생 수 만큼 점수 입력받음
 					System.out.println();
 				}
 			}
 			else if(selectNo == 3) {		// 점수 리스트 보기
 				for(int i = 0; i < studentNum; i++) {
 					System.out.print("scores[ " + i + "] > " );
-					System.out.println(scores[i] + "\n");
+					System.out.println(scores[i] + "\n");	// 입력받은 점수 출력
 				}
 			}
 			else if(selectNo == 4) {		// 최고 점수, 평균 점수 구하기
-				int sum = 0;
-				int max = 0;
+				int sum = 0;	// 총합
+				int max = 0;	// 최고 점수
 				for(int score : scores) {
-					sum += score;
+					sum += score;	// 총합에 점수를 누적
 					if(max < score)		
-						max = score;
+						max = score;	// max보다 클 경우 값을 바꿔줌
 				}
 				System.out.println("최고 점수 : " + max);
-				System.out.println("평균 점수 : " + (double)sum / scores.length);
+				System.out.println("평균 점수 : " + (double)sum / scores.length);	// 평균점수 구하기
 			}
 			else if(selectNo == 5) {		// 프로그램 종료
-				run = false;
+				run = false;	// false로 while문을 빠져나감
 			}
 		}
 		
