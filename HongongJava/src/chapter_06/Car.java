@@ -9,7 +9,15 @@ public class Car {
 	int maxSpeed = 350;
 	int speed;
 	
-	public Car(String color, int cc) {
-		
+	public Car() {};				// 기본 생성자
+	
+	public Car(String model) {		// 생성자
+		this(model, "검정");			// 중복 코드 줄이기
 	}
+	
+	public Car(String model, String color) {	// 생성자 오버로딩
+		this.model = model;			// 필드 초기화
+		this.color = color;
+	}
+	
 }
