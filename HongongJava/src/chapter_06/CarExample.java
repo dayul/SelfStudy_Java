@@ -4,7 +4,7 @@ public class CarExample {
 
 	public static void main(String[] args) {
 		// 객체 생성
-		Car myCar = new Car();
+		Car myCar = new Car("화이트", 3000);
 		
 		// 필드값 읽기
 		System.out.println("제작 회사 : " + myCar.company);
